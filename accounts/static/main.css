@@ -1,0 +1,276 @@
+body {
+  font-family: "Lato", sans-serif;
+  background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #05396b;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 10px;
+}
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #05396b;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+.sidebar header {
+  font-size: 22px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #05396b;
+  user-select: none;
+}
+.sidebar ul a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: white;
+  padding-left: 0px;
+
+  /* box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); */
+  transition: 0.4s;
+}
+ul li:hover a {
+  padding-left: 15px;
+}
+.sidebar ul a i {
+  margin-right: 16px;
+}
+a {
+  text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+  color: #e1bee7;
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+h1 {
+  font-size: 32px;
+  text-shadow: -3px 0 4px #00a86b;
+  font-family: "Segoe print", Arial, Helvetica, sans-serif;
+  color: #00a86b;
+  font-weight: lighter;
+}
+/* #check {
+    display: s;
+  } */
+
+/* @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500");
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  margin: 0px;
+}
+
+h1 {
+  text-align: center;
+}
+.log {
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+}
+.sidebar {
+  position: fixed;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #042331;
+  transition: all 0.5s ease;
+  overflow-x: hidden;
+}
+.sidebar header {
+  font-size: 22px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #063146;
+  user-select: none;
+}
+.sidebar ul a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: white;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.4s;
+}
+ul li:hover a {
+  padding-left: 50px;
+}
+.sidebar ul a i {
+  margin-right: 16px;
+}
+#check {
+  display: s;
+}
+label #btn,
+label #cancel {
+  position: absolute;
+  background: #042331;
+  border-radius: 3px;
+  cursor: pointer;
+}
+label #btn {
+  left: 40px;
+  top: 25px;
+  font-size: 35px;
+  color: white;
+  padding: 6px 12px;
+  transition: all 0.5s;
+}
+label #cancel {
+  z-index: 1111;
+  left: -195px;
+  top: 17px;
+  font-size: 30px;
+  color: #0a5275;
+  padding: 4px 9px;
+  transition: all 0.5s ease;
+}
+#check:checked ~ .sidebar {
+  left: 0;
+}
+#check:checked ~ label #btn {
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+#check:checked ~ label #cancel {
+  left: 195px;
+}
+#check:checked ~ section {
+  margin-left: 250px;
+}
+section {
+  background: url(bg.jpeg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  transition: all 0.5s;
+} */
+/* @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500");
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  margin: 0px;
+}
+
+h1 {
+  text-align: center;
+}
+.log {
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+}
+.sidebar {
+  position: fixed;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #042331;
+  transition: all 0.5s ease;
+  overflow-x: hidden;
+}
+.sidebar header {
+  font-size: 22px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #063146;
+  user-select: none;
+}
+ */
+
+/* 
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#content {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+
+ On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) 
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+} */

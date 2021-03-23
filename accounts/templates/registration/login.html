@@ -1,0 +1,19 @@
+{% extends 'index.html' %} {% block content %}
+<!-- <h1>Login Form</h1> -->
+<!-- <form action="" method="POST">
+  {% csrf_token %} {{form.as_p}}
+  <button type="submit">login</button>
+</form> -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'login.css' %}" />
+
+<div class="login-container">
+  <p class="sign" >Sign in</p>
+  <form class="form1" method="POST" action = '#'>
+    {% csrf_token %}
+    <input class="un " type="text"  placeholder="Username" name="username" required>
+    <input class="pass" type="password"  placeholder="Password" name="password" required>
+    <button class = 'submit'type="submit" >Sign In</button>
+    <!-- <p class="forgot"><a href="#">Forgot Password?</p> -->
+  </div>
+{% endblock %}

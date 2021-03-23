@@ -1,0 +1,63 @@
+{% extends 'index.html' %} {% block content %} {% load static %}
+
+<link rel="stylesheet" href="{% static 'main.css' %}" />
+
+<center>
+  <h1>Yield Prediction</h1>
+  <br />
+</center>
+<br />
+<form method="POST">
+  {% csrf_token %}
+  <div class="col-md-4 col-md-offset-4" style="margin: 0 auto; width: 80%">
+    <div class="form-group">
+      <!-- <label>Area</label>
+      <input type="text" class="form-control" placeholder="Area" name="area" /> -->
+      <!-- </div>
+    <div class="form-group"> -->
+      <!-- <label>Item</label>
+        
+      <input type="text" class="form-control" placeholder="Item" name="item" /> -->
+      <select class="custom-select" name="selection">
+        <option selected>Select Item</option>
+        <option value="0">Maize</option>
+        <option value="1">Potatoes</option>
+        <option value="2">Rice</option>
+        <option value="3">Sorghum</option>
+        <option value="4">Soybeans</option>
+        <option value="5">Wheat</option>
+        <option value="6">Cassava</option>
+        <option value="7">Sweet potatoes</option>
+        <option value="8">Plantains</option>
+        <option value="9">Yams</option>
+      </select>
+      <label>Average Rainfall per mm</label>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Average Rainfall per mm"
+        name="ar"
+      />
+      <label>Pesticides tones</label>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Pesticides tones"
+        name="pt"
+      />
+      <label>Average Temperature</label>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Average Temperature"
+        name="at"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+<br />
+<h1 style="text-align: center">Predicted Yield is: {{predicts}}</h1>
+
+{% endblock %}

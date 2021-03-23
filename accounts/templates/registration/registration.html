@@ -1,0 +1,21 @@
+{% extends 'index.html' %} {% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'signup.css' %}" />
+
+<div class="signup-container">
+  <p class="sign" >Sign Up</p>
+  <form class="form1" method="POST" action = '#'>
+    {% csrf_token %}
+    <input class="fn " type="text"  placeholder="First Name" name="first_name" required>
+    <input class="ln " type="text"  placeholder="Last Name" name="last_name" >
+    <input class="em " type="text"  placeholder="Email" name="email" required>
+    <input class="un " type="text"  placeholder="Username" name="susername" required>
+    <input class="pass" type="password"  placeholder="Password" name="spassword" required>
+    <button class = 'submit'type="submit" >Sign Up</button>
+  </div>
+<!-- <h1>Registration Form</h1>
+<form action="" method="POST">
+  {% csrf_token %} {{form.as_p}}
+  <button type="submit">register</button>
+</form> -->
+{% endblock %}

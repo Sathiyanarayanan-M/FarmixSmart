@@ -1,0 +1,48 @@
+{% extends 'index.html' %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'main.css' %}" />
+<center><h1>Disease detection Section</h1></center>
+<center><h1>{{pre_op}}</h1></center>
+<script type="text/javascript">
+  function PreviewImage() {
+    var oFReader = new FileReader();
+    oFReader.readAsDataURL(document.getElementById("imageUpload").files[0]);
+
+    oFReader.onload = function (oFREvent) {
+      document.getElementById("uploadPreview").src = oFREvent.target.result;
+    };
+  }
+</script>
+{% if user.is_authenticated %}
+<center>
+  <br />
+  <form id="upload-file" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <img id="uploadPreview" style="width: 200px; height: 200px" />
+    <br />
+    <br />
+    <div class="custom-file" style="width: 200px">
+      <input
+        type="file"
+        class="custom-file-input"
+        name="file"
+        id="imageUpload"
+        accept=".png, .jpg, .jpeg"
+        onchange="PreviewImage();"
+      />
+      <label class="custom-file-label" style="text-align: left"
+        >Choose Image</label
+      >
+    </div>
+    <!-- <input
+      type="file"
+      name="file"
+      id="imageUpload"
+      accept=".png, .jpg, .jpeg"
+      onchange="PreviewImage();"
+    /> -->
+    <br /><br />
+
+    <input type="submit" value="submit" class="btn btn-light" />
+  </form>
+</center>
+{% endif %} {% endblock %}
