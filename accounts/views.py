@@ -10,6 +10,7 @@ import os
 from werkzeug.utils import secure_filename
 from .forms import ImageUploadForm
 import joblib
+import json
 
 # Create your views here.
 
@@ -49,7 +50,9 @@ def yieldPrediction(request):
         # ]
         print(yield_predicts)
         return render(
-            request, "yield_prediction.html", {"predicts": float(yield_predicts)}
+            request,
+            "yield_prediction.html",
+            {"predicts": float(yield_predicts), "head": "Predicted Yield is"},
         )
     return render(request, "yield_prediction.html")
 
@@ -80,6 +83,8 @@ def handle_uploaded_file(f, img_path):
 def diseaseDetection(request):
     form = ImageUploadForm(request.POST, request.FILES)
     if request.method == "POST" and "file" in request.FILES:
+        json_data = open("accounts\static\diseases.json")
+        load_json = json.load(json_data)
         f = request.FILES["file"]
         img_path = "images/" + str(request.user.id) + "test.jpg"
         handle_uploaded_file(f, img_path)
@@ -110,7 +115,15 @@ def diseaseDetection(request):
         ind = np.argmax(a)
         print("Prediction:", disease_class[ind])
         result = disease_class[ind]
-        return render(request, "disease_detection.html", {"pre_op": result})
+        remedies = ""
+        for i in load_json["Prevention_methods"]:
+            if result == i["disease_name"]:
+                remedies = i["prevention"]
+        return render(
+            request,
+            "disease_detection.html",
+            {"pre_op": result, "prevention": remedies, "head": "Preventive Methods"},
+        )
 
     return render(request, "disease_detection.html")
 

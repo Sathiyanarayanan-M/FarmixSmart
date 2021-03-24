@@ -1,0 +1,52 @@
+{
+  "Prevention_methods": [
+    {
+      "disease_name": "Pepper__bell___Bacterial_spot",
+      "prevention": "Select resistant varieties \n Purchase disease-free seed and transplants \n Treat seeds by soaking them for 2 minutes in a 10% chlorine bleach solution (1 part bleach; 9 parts water). Thoroughly rinse seeds and dry them before planting \n Mulch plants deeply with a thick organic material like newspaper covered with straw or grass clippings \n Avoid overhead watering \n Remove and discard badly infected plant parts and all debris at the end of the season."
+    },
+    {
+      "disease_name": "Potato___Early_blight",
+      "prevention": "Avoid overhead irrigation and allow for sufficient aeration between plants to allow the foliage to dry as quickly as possible.\n Avoid overhead irrigation and allow for sufficient aeration between plants to allow the foliage to dry as quickly as possible. \n Follow a complete and regular foliar fungicide spray program. \n Practice good killing techniques to lessen tuber infections"
+    },
+    {
+      "disease_name": "Potato___Late_blight",
+      "prevention": "Plant resistant cultivars when available. \n Remove volunteers from the garden prior to planting and space plants far enough apart to allow for plenty of air circulation \n Water in the early morning hours, or use soaker hoses, to give plants time to dry out during the day — avoid overhead irrigation \n Destroy all tomato and potato debris after harvest."
+    },
+    {
+      "disease_name": "Tomato__Target_Spot",
+      "prevention": "Remove old plant debris at the end of the growing season; otherwise, the spores will travel from debris to newly planted tomatoes in the following growing season, thus beginning the disease anew \n Remove a few branches from the lower part of the plants to allow better airflow at the base \n Remove and burn the lower leaves as soon as the disease is seen, especially after the lower fruit trusses have been picked."
+    },
+    {
+      "disease_name": "Tomato__Tomato_mosaic_virus",
+      "prevention": "Fungicides will NOT treat this viral disease \n Plant resistant varieties when available or purchase transplants from a reputable source \n Do NOT save seed from infected crops. \n Spot treat with least-toxic, natural pest control products, such as Safer Soap, Bon-Neem and diatomaceous earth, to reduce the number of disease carrying insects \n Avoid working in the garden during damp conditions (viruses are easily spread when plants are wet)."
+    },
+    {
+      "disease_name": "Tomato__Tomato_YellowLeaf__Curl_Virus",
+      "prevention": "symptomatic plants should be carefully covered by a clear or black plastic bag and tied at the stem at soil line. \n Cut off the plant below the bag and allow bag with plant and whiteflies to desiccate to death on the soil surface for 1-2 days prior to placing the plant in the trash. \n Do not cut the plant off or pull it out of the garden and toss it on the compost! \n The goal is to remove the plant reservoir of virus from the garden and to trap the existing virus-bearing whiteflies so they do not disperse onto other tomatoes"
+    },
+    {
+      "disease_name": "Tomato_Bacterial_spot",
+      "prevention": "symptomatic plants should be carefully covered by a clear or black plastic bag and tied at the stem at soil line. \n Cut off the plant below the bag and allow bag with plant and whiteflies to desiccate to death on the soil surface for 1-2 days prior to placing the plant in the trash. \n Do not cut the plant off or pull it out of the garden and toss it on the compost! \n The goal is to remove the plant reservoir of virus from the garden and to trap the existing virus-bearing whiteflies so they do not disperse onto other tomatoes"
+    },
+    {
+      "disease_name": "Tomato_Early_blight",
+      "prevention": "Tomatoes that have early blight require immediate attention before the disease takes over the plants. \n Thoroughly spray the plant (bottoms of leaves also) with Bonide Liquid Copper Fungicide concentrate or Bonide Tomato & Vegetable. Both of these treatments are organic. \n If possible time applications so that 12 hours of dry weather follows applications. \n A day after treatment, remove the lower branches with sharp razor blade knife. \n Clean your knife with rubbing alcohol before trimming the next plant to prevent the spread of the disease."
+    },
+    {
+      "disease_name": "Tomato_Late_blight",
+      "prevention": "Plant resistant cultivars when available. \n Remove volunteers from the garden prior to planting and space plants far enough apart to allow for plenty of air circulation \n Water in the early morning hours, or use soaker hoses, to give plants time to dry out during the day — avoid overhead irrigation \n Destroy all tomato and potato debris after harvest."
+    },
+    {
+      "disease_name": "Tomato_Leaf_Mold",
+      "prevention": "Depending exclusively upon chemicals isn’t a good management approach. \n In the case of leaf mold of tomato, using resistant varieties, utilizing sound cultural practices—particularly with regards to controlling humidity and sanitation—are the best ways to prevent and control occurrences of the disease. \n There are many tomato varieties with good resistance, but as there are at least 12 races of the fungus, tomato breeders have concentrated on breeding for resistance to only some. "
+    },
+    {
+      "disease_name": "Tomato_Septoria_leaf_spot",
+      "prevention": "Remove infected leaves immediately, and be sure to wash your hands and pruners thoroughly before working with uninfected plants. \n Fungicides containing either copper or potassium bicarbonate will help prevent the spreading of the disease. Begin spraying as soon as the first symptoms appear and follow the label directions for continued management \n  While chemical options are not ideal, they may be the only option for controlling advanced infections. \n One of the least toxic and most effective is chlorothalonil (sold under the names Fungonil and Daconil)."
+    },
+    {
+      "disease_name": "Tomato_Spider_mites_Two_spotted_spider_mite",
+      "prevention": "Prune leaves, stems and other infested parts of plants well past any webbing and discard in trash (and not in compost piles). Don’t be hesitant to pull entire plants to prevent the mites spreading to its neighbors. \n Use the Bug Blaster to wash plants with a strong stream of water and reduce pest numbers. \n Commercially available beneficial insects, such as ladybugs, lacewing and predatory mites are important natural enemies. For best results, make releases when pest levels are low to medium."
+    }
+  ]
+}
