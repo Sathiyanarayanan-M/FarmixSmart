@@ -1,9 +1,5 @@
 {% extends 'index.html' %} {% block content %} {% load static %}
 <link rel="stylesheet" href="{% static 'main.css' %}" />
-<center><h1>Disease detection Section</h1></center>
-<center><h1>{{pre_op}}</h1></center>
-<h2 style="color: #05396b">{{head}}</h2>
-<p style="color: #d35c99; font-family: Algerian">{{prevention}}</p>
 <script type="text/javascript">
   function PreviewImage() {
     var oFReader = new FileReader();
@@ -14,9 +10,12 @@
     };
   }
 </script>
+<center><h1>Disease detection Section</h1></center>
+
 {% if user.is_authenticated %}
-<center>
-  <br />
+
+<br />
+<div class="di-img">
   <form id="upload-file" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <img id="uploadPreview" style="width: 200px; height: 200px" />
@@ -35,16 +34,23 @@
         >Choose Image</label
       >
     </div>
-    <!-- <input
-      type="file"
-      name="file"
-      id="imageUpload"
-      accept=".png, .jpg, .jpeg"
-      onchange="PreviewImage();"
-    /> -->
-    <br /><br />
-
-    <input type="submit" value="submit" class="btn btn-light" />
+    <br />
+    <br />
+    <input
+      type="submit"
+      value="submit"
+      class="btn btn-success"
+      style="display: block; margin-right: auto; margin-left: auto"
+    />
   </form>
-</center>
-{% endif %} {% endblock %}
+</div>
+
+{% if head != 'null' %}
+<div class="disease-container">
+  <img src="{% static imageurl %}" style="width: 200px; height: 200px" />
+  <h1>{{pre_op}}</h1>
+  <h2 style="color: #26ad6a">{{head}}</h2>
+  <p style="color: #d35c99; font-family: Algerian">{{prevention}}</p>
+  <a href="{% url 'diseaseDetection' %}">Re detect</a>
+</div>
+{% endif %} {% endif %} {% endblock %}

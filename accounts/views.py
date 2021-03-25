@@ -22,6 +22,37 @@ def IndexView(request):
     return render(request, "index.html")
 
 
+def multi_yield(yield_list):
+    items = [
+        "Maize",
+        "Potatoes",
+        "Rice",
+        "Sorghum",
+        "Soybeans",
+        "Wheat",
+        "Cassava",
+        "Sweet potatoes",
+        "Plantains",
+        "Yams",
+    ]
+    yield_dict = {}
+    for its in items:
+        yield_dict[its] = float(
+            yield_model.predict(
+                [
+                    [
+                        yield_list[0],
+                        items.index(its),
+                        yield_list[2],
+                        yield_list[3],
+                        yield_list[4],
+                    ]
+                ]
+            )
+        )
+    return yield_dict
+
+
 @login_required
 def yieldPrediction(request):
     ip = request.META.get("REMOTE_ADDR")
@@ -34,8 +65,10 @@ def yieldPrediction(request):
         pesticides = float(request.POST.get("pt"))
         predicts_list = [42, item, average_rainfall, pesticides, average_temp]
         print(predicts_list)
-        yield_predicts = yield_model.predict([predicts_list])
-
+        if item == 100:
+            yield_predicts = multi_yield(predicts_list)
+        else:
+            yield_predicts = [float(yield_model.predict([predicts_list]))]
         # items = [
         #     "Maize",
         #     "Potatoes",
@@ -52,9 +85,9 @@ def yieldPrediction(request):
         return render(
             request,
             "yield_prediction.html",
-            {"predicts": float(yield_predicts), "head": "Predicted Yield is"},
+            {"predicts": yield_predicts, "head": "Predicted Yield is"},
         )
-    return render(request, "yield_prediction.html")
+    return render(request, "yield_prediction.html", {"predicts": [], 'head': 'null'})
 
 
 @login_required
@@ -64,7 +97,6 @@ def DashboardView(request):
 
 def model_predict(img_path, model):
     img = image.load_img(img_path, grayscale=False, target_size=(64, 64))
-    # show_img = image.load_img(img_path, grayscale=False, target_size=(64, 64))
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
     x = np.array(x, "float32")
@@ -82,16 +114,14 @@ def handle_uploaded_file(f, img_path):
 @login_required
 def diseaseDetection(request):
     form = ImageUploadForm(request.POST, request.FILES)
+    head = "null"
     if request.method == "POST" and "file" in request.FILES:
         json_data = open("accounts\static\diseases.json")
         load_json = json.load(json_data)
         f = request.FILES["file"]
-        img_path = "images/" + str(request.user.id) + "test.jpg"
+        img_path = "accounts/static/images/" + str(request.user.id) + "test.jpg"
         handle_uploaded_file(f, img_path)
-        # img_path = 'images/predict.jpg'
-        # basepath = os.path.dirname(__file__)
-        # file_path = os.path.join(basepath, "uploads", secure_filename(f.name))
-        # f.save(file_path)
+
         preds = model_predict(img_path, model)
         print(preds[0])
         disease_class = [
@@ -122,10 +152,15 @@ def diseaseDetection(request):
         return render(
             request,
             "disease_detection.html",
-            {"pre_op": result, "prevention": remedies, "head": "Preventive Methods"},
+            {
+                "pre_op": result,
+                "prevention": remedies,
+                "head": "Preventive Methods",
+                "imageurl": "images/" + str(request.user.id) + "test.jpg",
+            },
         )
 
-    return render(request, "disease_detection.html")
+    return render(request, "disease_detection.html", {"head": head})
 
 
 def RegistrationView(request):
@@ -139,8 +174,6 @@ def RegistrationView(request):
             return HttpResponse(
                 "<script>alert('username already available'); window.location.href = '/registration';</script>"
             )
-        # if User.objects.exclude(pk=instance.pk).filter(username=username).exists():
-        #     raise forms.ValidationError(u'Username "%s" is already in use.' % username)
         else:
             user = User.objects.create_user(
                 username=username,

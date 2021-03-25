@@ -7,19 +7,15 @@
   <br />
 </center>
 <br />
+<div class="di-img">
 <form method="POST">
   {% csrf_token %}
   <div class="col-md-4 col-md-offset-4" style="margin: 0 auto; width: 80%">
     <div class="form-group">
-      <!-- <label>Area</label>
-      <input type="text" class="form-control" placeholder="Area" name="area" /> -->
-      <!-- </div>
-    <div class="form-group"> -->
-      <!-- <label>Item</label>
-        
-      <input type="text" class="form-control" placeholder="Item" name="item" /> -->
-      <select class="custom-select" name="selection">
+      <label>Select Crop type</label>
+      <select class="custom-select" name="selection" required>
         <option selected>Select Item</option>
+        <option value="100">All</option>
         <option value="0">Maize</option>
         <option value="1">Potatoes</option>
         <option value="2">Rice</option>
@@ -37,26 +33,43 @@
         class="form-control"
         placeholder="Average Rainfall per mm"
         name="ar"
-      />
+        maxlength="9"
+        size="10"
+
+      required/>
       <label>Pesticides tones</label>
       <input
         type="number"
         class="form-control"
         placeholder="Pesticides tones"
         name="pt"
-      />
+        maxlength="9"
+        size="10"
+      required/>
       <label>Average Temperature</label>
       <input
         type="number"
         class="form-control"
         placeholder="Average Temperature"
         name="at"
+        maxlength="9"
+        size="10"
+required
       />
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>
+</div>
 <br />
-<h1 style="text-align: center">{{head}} {{predicts}}</h1>
-{% endblock %}
+{% if head != 'null' %}
+<div class="disease-container" style="width: 500px;height: 450px;">
+{% if predicts %} {% if predicts|length > 1 %} {% for item,values in predicts.items %}
+<h4 style="text-align: center;color: blueviolet;">{{item}}{{values}}</h4>
+{% endfor %} {% else %}
+<h2 style="text-align: center;color: blueviolet; ">{{head}} {{predicts}}</h2>
+{% endif %}{% endif %}
+<a href="{% url 'yieldPrediction' %}">Retry</a>
+</div>
+{% endif %} {% endblock %}
