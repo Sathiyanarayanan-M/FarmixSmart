@@ -27,8 +27,8 @@
       }
     </script>
   </head>
-  <body>
-    <div class="area">
+  <body class="area">
+    <!-- <div class="area"> -->
       <div class="circles">
         <button class="openbtn" onclick="openNav()">☰</button>
         <div
@@ -55,6 +55,10 @@
             <li>
               <a href="{% url 'diseaseDetection' %}"
                 ><i class="fas fa-qrcode"></i>Disease Detection</a
+              >
+            </li><li>
+              <a href="{% url 'feed' %}"
+                ><i class="fas fa-qrcode"></i>Community</a
               >
             </li>
             <li>
@@ -94,6 +98,6 @@
           {% block content %} {% endblock %}
         </div>
       </div>
-    </div>
+    <!-- </div> -->
   </body>
 </html>
