@@ -19,7 +19,7 @@ yield_model = joblib.load("accounts/model/new_model.sav")
 
 
 def IndexView(request):
-    return render(request, "index.html")
+    return render(request, "home.html")
 
 
 def multi_yield(yield_list):

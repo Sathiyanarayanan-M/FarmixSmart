@@ -1,103 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>FarmixSmart</title>
-    {% load static %}
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="{% static 'css_ani.css' %}" />
-    <link rel="stylesheet" href="{% static 'main.css' %}" />
-    <script
-      src="https://kit.fontawesome.com/67d5ee91a4.js"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      function openNav() {
-        document.getElementById("sidebar").style.width = "250px";
-        document.getElementById("main").style.marginleft = "250px";
-      }
 
-      function closeNav() {
-        document.getElementById("sidebar").style.width = "0";
-        document.getElementById("main").style.marginleft = "0";
-      }
-    </script>
-  </head>
-  <body class="area">
-    <!-- <div class="area"> -->
-      <div class="circles">
-        <button class="openbtn" onclick="openNav()">☰</button>
-        <div
-          class="sidebar"
-          id="sidebar"
-          style="position: absolute; z-index: 11111111"
-        >
-          <header>MENU</header>
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-            >×</a
-          >
-          <ul>
-            {% if user.is_authenticated %}
-            <li>
-              <a href="{% url 'dashboard' %}"
-                ><i class="fas fa-qrcode"></i>Dashboard</a
-              >
-            </li>
-            <li>
-              <a href="{% url 'yieldPrediction' %}"
-                ><i class="fas fa-qrcode"></i>Yield Prediction</a
-              >
-            </li>
-            <li>
-              <a href="{% url 'diseaseDetection' %}"
-                ><i class="fas fa-qrcode"></i>Disease Detection</a
-              >
-            </li><li>
-              <a href="{% url 'feed' %}"
-                ><i class="fas fa-qrcode"></i>Community</a
-              >
-            </li>
-            <li>
-              <a href="{% url 'logout' %}"
-                ><i class="fas fa-sign-out-alt"></i>logout</a
-              >
-            </li>
-            {% else %}
-            <li>
-              <a href="/"><i class="fas fa-qrcode"></i>Home</a>
-            </li>
-            <li>
-              <a href="{% url 'login' %}"
-                ><i class="fas fa-sign-in-alt"></i>Login</a
-              >
-            </li>
-            <li>
-              <a href="{% url 'registration' %}"
-                ><i class="fas fa-sign-in-alt"></i>Register</a
-              >
-            </li>
-            {% endif %}
+<head>
+  <title>FarmixSmart</title>
+  {% load static %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{% static 'css_ani.css' %}" />
+  <link rel="stylesheet" href="{% static 'main.css' %}" />
+  <script src="https://kit.fontawesome.com/67d5ee91a4.js" crossorigin="anonymous"></script>
+  <script>
+    function openNav() {
+      document.getElementById("sidebar").style.width = "250px";
+      document.getElementById("main").style.marginleft = "250px";
+    }
 
-            <li>
-              <a href="#section5"><i class="fas fa-address-book"></i>Contact</a>
-            </li>
-          </ul>
-        </div>
-        <h3></h3>
-        <h3></h3>
-        <h3></h3>
-        <h3></h3>
-        <h3></h3>
-        <h3></h3>
+    function closeNav() {
+      document.getElementById("sidebar").style.width = "0";
+      document.getElementById("main").style.marginleft = "0";
+    }
+  </script>
+</head>
 
-        <div class="content" id="content">
-          {% block content %} {% endblock %}
-        </div>
-      </div>
-    <!-- </div> -->
-  </body>
+<body class="area">
+  <!-- <div class="area"> -->
+  <div class="circles">
+    <button class="openbtn" onclick="openNav()">☰</button>
+    <div class="sidebar" id="sidebar" >
+      <!-- <header>MENU</header> -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      
+        {% if user.is_authenticated %}
+        
+          <a href="{% url 'dashboard' %}"><i class="fab fa-dashcube"></i>Dashboard</a>
+        
+          <a href="{% url 'yieldPrediction' %}"><i class="fas fa-seedling"></i>Yield Prediction</a>
+        
+          <a href="{% url 'diseaseDetection' %}"><i class="fas fa-stethoscope"></i>Disease Detection</a>
+        
+          <a href="{% url 'feed' %}"><i class="fas fa-users"></i>Community</a>
+        
+          <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>logout</a>
+        
+        {% else %}
+        
+          <a href="/"><i class="fas fa-home"></i>Home</a>
+        
+          <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i>Login</a>
+        
+          <a href="{% url 'registration' %}"><i class="fas fa-user-plus"></i>Register</a>
+        
+        {% endif %}
+
+        
+          <a href="#section5"><i class="fas fa-address-book"></i>Contact</a>
+        
+          </div>
+    <h3></h3>
+    <h3></h3>
+    <h3></h3>
+    <h3></h3>
+    <h3></h3>
+    <h3></h3>
+
+    <div class="content" id="content">
+      {% block content %} {% endblock %}
+    </div>
+  </div>
+  <!-- </div> -->
+</body>
+
 </html>

@@ -1,7 +1,6 @@
 {% extends 'index.html' %} {% block content %} {% load static %}
 <link rel="stylesheet" href="{% static 'main.css' %}" />
-<center><h1>Welcome {{username}}</h1></center>
-{% csrf_token %}
-<!-- {% if user.is_authenticated %} -->
-<!-- <a href="{% url 'logout' %}">logout</a> -->
-{% endif %} {% endblock %}
+<div class="userdash">
+<h1>Welcome {{username}}</h1>
+</div>
+{% endblock %}
