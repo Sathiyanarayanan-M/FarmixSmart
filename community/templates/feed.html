@@ -1,110 +1,139 @@
 {% extends 'index.html' %}
 
 {% block content %}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 <script>
-function newpost() 
-        {  
-            var div = document.getElementById("form-cont");  
-            if (div.style.display !== "none") {  
-                div.style.display = "none";  
-            }  
-            else {  
-                div.style.display = "block";  
-            }  
+    function newpost() {
+        var div = document.getElementById("form-cont");
+        if (div.style.display !== "none") {
+            div.style.display = "none";
         }
-function closepost(){
-  var div = document.getElementById("form-cont");
-  div.style.display = "none";
-}
+        else {
+            div.style.display = "block";
+        }
+    }
+    function closepost() {
+        var div = document.getElementById("form-cont");
+        div.style.display = "none";
+    }
 </script>
 <style>
-  .di-img{
-    display: none;
-    background-color: #ffffff;
-    opacity: 0.6;
-    align-items: center;
-    width: 500px;
-    height: 500px;
-  }
-  .time {
-    font-size: 9px !important
-}
+    .di-img {
+        display: none;
+        position: fixed;
+        width: 300px;
+        height: 260px;
+        border-radius: 3px;
+        box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.2);
+        background: #fff;
+        }
 
-.socials i {
-    margin-right: 14px;
-    font-size: 17px;
-    color: #d2c8c8;
-    cursor: pointer
-}
+    .time {
+        font-size: 9px !important
+    }
 
-.feed-image img {
-    width: 100%;
-    height: auto
-}
-.new-post{
-	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
-	right:40px;
-	background-color:#0C9;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-	/* box-shadow: 2px 2px 3px #999; */
-}
+    .socials i {
+        margin-right: 14px;
+        font-size: 17px;
+        color: #d2c8c8;
+        cursor: pointer
+    }
 
-.add-post{
-	margin-top:22px;
-}
+    .feed-image img {
+        width: 100%;
+        height: auto
+    }
+
+    .new-post {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #0C9;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+    }
+
+    .add-post {
+        margin-top: 22px;
+    }
+
+    .u-upload{
+        width: 140px;
+        height: 40px;
+        background: darkmagenta;
+        color: #fff;
+        border-radius: 3px;
+        border: 0;
+        box-shadow: 0 3px 0 0 hotpink;
+        transition: all 0.3s ease-in-out;
+        font-size: 14px;
+    }
+    .u-upload:hover{
+        background: rebeccapurple;
+        box-shadow: 0 3px 0 0 deeppink;
+    }
 </style>
-<div class="di-img" id="form-cont" >
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Upload</button>
-    <br><br><br>
-    <a onclick=closepost() style="cursor: pointer;">cancel</a>
-  </form>
+
+<div class="di-img" id="form-cont">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h5>Description</h5>
+        <div style="margin-right: 16px;">{{ form.description}}</div>
+        <br>
+        <div>{{ form.document }}</div>
+        <br>
+        <button class="u-upload" type="submit">Upload</button>
+        <br> <br>
+        <a onclick=closepost() style="cursor: pointer;">cancel</a>
+    </form>
 </div>
-<!-- <center><a onclick="newpost()">add post</a></center> -->
 <!-- bootstrap social feed -->
 <div class="container mt-4 mb-5">
-  <div class="d-flex justify-content-center row">
-      <div class="col-md-8">
-          <div class="feed p-2">
-              <!-- <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white border">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-8">
+            <div class="feed p-2">
+                <!-- <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white border">
                   <div class="feed-text px-2">
                       <input class="text-black-50 mt-2" placeholder="What's on your mind" style="border: 0;"></input>
                   </div>
                   <div class="feed-icon px-2"><a onclick=newpost()><i class="fas fa-plus-circle" style="cursor: pointer;" ></i></a></div>
               </div> -->
-              
-              {% for obj in documents %}
-              <div class="bg-white border mt-2">
-                  <div>
-                      <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
-                          <div class="d-flex flex-row align-items-center feed-text px-2">
-                              <!-- <img class="rounded-circle" src="https://i.imgur.com/aoKusnD.jpg" width="45"> -->
-                              <div class="d-flex flex-column flex-wrap ml-2"><span class="font-weight-bold">venkadesh</span><span class="text-black-50 time">40 minutes ago</span></div>
-                          </div>
-                          <div class="feed-icon px-2"><i class="fa fa-ellipsis-v text-black-50"></i></div>
-                      </div>
-                  </div>
-                  <div class="p-2 px-3"><span>{{obj.description}} {{ user }}</span></div>
-                  <div class="feed-image p-2 px-3"><img class="img-fluid img-responsive" src="{{ obj.document.url }}"></div>
-                  <!-- <div class="d-flex justify-content-end socials p-2 py-3"><i class="fa fa-thumbs-up"></i><i class="fa fa-comments-o"></i><i class="fa fa-share"></i></div> -->
-              </div>
-              {% endfor %}
-          </div>
-      </div>
-  </div>
+                {% for obj in documents %}
+                <div class="bg-white border mt-2">
+                    <div>
+                        <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
+                            <div class="d-flex flex-row align-items-center feed-text px-2">
+                                <!-- <img class="rounded-circle" src="https://i.imgur.com/aoKusnD.jpg" width="45"> -->
+                                <div class="d-flex flex-column flex-wrap ml-2"><span
+                                        class="font-weight-bold">Anonymous User</span><span class="text-black-50 time">{{obj.uploaded_at}}</span></div>
+                            </div>
+                            <div class="feed-icon px-2"><i class="fa fa-ellipsis-v text-black-50"></i></div>
+                        </div>
+                    </div>
+                    <div class="p-2 px-3"><span>{{obj.description}} {{ user }}</span></div>
+                    <div class="feed-image p-2 px-3"><img class="img-fluid img-responsive" src="{{ obj.document.url }}">
+                    </div>
+                    <!-- <div class="d-flex justify-content-end socials p-2 py-3"><i class="fa fa-thumbs-up"></i><i class="fa fa-comments-o"></i><i class="fa fa-share"></i></div> -->
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>
 <a onclick=newpost() class="new-post" style="cursor: pointer;">
     <i class="fa fa-plus add-post"></i>
-    </a>
+</a>
 {% endblock %}
