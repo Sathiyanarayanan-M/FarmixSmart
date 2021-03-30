@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.templatetags.static import static
 from tensorflow import keras
 from tensorflow.keras.preprocessing import image
 import numpy as np
@@ -16,6 +18,7 @@ base_path = os.path.dirname(os.path.abspath(__file__))
 
 h5_model_path = os.path.join(base_path, 'model', 'model.h5')
 yield_model_path = os.path.join(base_path, 'model', 'new_model.sav')
+
 
 
 def IndexView(request):
@@ -114,16 +117,17 @@ def handle_uploaded_file(f, img_path):
 
 @login_required
 def diseaseDetection(request):
+
     model = keras.models.load_model(h5_model_path, compile=False)
     form = ImageUploadForm(request.POST, request.FILES)
     head = "null"
     if request.method == "POST" and "file" in request.FILES:
-        json_data = open("accounts\static\diseases.json")
+        json_data = open('.'+staticfiles_storage.url("diseases.json"))
         load_json = json.load(json_data)
         f = request.FILES["file"]
-        img_path = "accounts/static/images/" + str(request.user.id) + "test.jpg"
+        # static("images/") + str(request.user.id) + "test.jpg"
+        img_path = '.'+ staticfiles_storage.url("images/"+str(request.user.id)+"test.jpg")
         handle_uploaded_file(f, img_path)
-
         preds = model_predict(img_path, model)
         print(preds[0])
         disease_class = [
