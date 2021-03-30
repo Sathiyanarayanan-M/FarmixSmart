@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import socket
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -123,11 +125,21 @@ STATIC_URL = "/static/"
 
 LOGIN_REDIRECT_URL = "dashboard"
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+# ]
 
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+HOSTNAME = socket.gethostname()
+
+# if hostname same as production url name use STATIC_ROOT 
+if HOSTNAME == 'DESKTOP-E2DF7G9':
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+else:
+        STATIC_ROOT = os.path.join(BASE_DIR, "static")
+    
 # Path where media is stored
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -11,7 +11,6 @@ from werkzeug.utils import secure_filename
 from .forms import ImageUploadForm
 import joblib
 import json
-
 # Create your views here.
 base_path = os.path.dirname(os.path.abspath(__file__))
 
