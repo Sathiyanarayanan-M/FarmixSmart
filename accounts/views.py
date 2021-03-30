@@ -13,12 +13,16 @@ import joblib
 import json
 
 # Create your views here.
+base_path = os.path.dirname(os.path.abspath(__file__))
 
-model = keras.models.load_model("accounts\model\model.h5", compile=False)
-yield_model = joblib.load("accounts/model/new_model.sav")
+h5_model_path = os.path.join(base_path, 'model', 'model.h5')
+yield_model_path = os.path.join(base_path, 'model', 'new_model.sav')
 
+model = keras.models.load_model(h5_model_path, compile=False)
+yield_model = joblib.load(yield_model_path)
 
 def IndexView(request):
+    print(h5_model_path)
     return render(request, "home.html")
 
 

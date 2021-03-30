@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "agk6uzh@(-(_v1xmk2426v&uj5^qq$^v+zei1l1kzoe33-kef="
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['farmixsmart.herokuapp.com',]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
