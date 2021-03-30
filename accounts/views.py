@@ -18,15 +18,12 @@ base_path = os.path.dirname(os.path.abspath(__file__))
 h5_model_path = os.path.join(base_path, 'model', 'model.h5')
 yield_model_path = os.path.join(base_path, 'model', 'new_model.sav')
 
-model = keras.models.load_model(h5_model_path, compile=False)
-yield_model = joblib.load(yield_model_path)
 
 def IndexView(request):
-    print(h5_model_path)
     return render(request, "home.html")
 
 
-def multi_yield(yield_list):
+def multi_yield(yield_model,yield_list):
     items = [
         "Maize",
         "Potatoes",
@@ -59,8 +56,9 @@ def multi_yield(yield_list):
 
 @login_required
 def yieldPrediction(request):
-    ip = request.META.get("REMOTE_ADDR")
-    print(ip)
+    yield_model = joblib.load(yield_model_path)
+    # ip = request.META.get("REMOTE_ADDR")
+    # print(ip)
     if request.method == "POST":
         # area = request.POST.get("area")
         item = int(request.POST.get("selection"))
@@ -70,7 +68,7 @@ def yieldPrediction(request):
         predicts_list = [42, item, average_rainfall, pesticides, average_temp]
         print(predicts_list)
         if item == 100:
-            yield_predicts = multi_yield(predicts_list)
+            yield_predicts = multi_yield(yield_model,predicts_list)
         else:
             yield_predicts = [float(yield_model.predict([predicts_list]))]
         # items = [
@@ -117,6 +115,7 @@ def handle_uploaded_file(f, img_path):
 
 @login_required
 def diseaseDetection(request):
+    model = keras.models.load_model(h5_model_path, compile=False)
     form = ImageUploadForm(request.POST, request.FILES)
     head = "null"
     if request.method == "POST" and "file" in request.FILES:
