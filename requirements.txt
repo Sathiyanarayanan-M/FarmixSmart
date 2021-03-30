@@ -1,5 +1,5 @@
 Django==3.1.7
 Pillow==8.1.2
 scikit-learn==0.24.1
-tensorflow==2.4.0
+tensorflow-cpu==2.4.1
 geoip2==4.1.0
