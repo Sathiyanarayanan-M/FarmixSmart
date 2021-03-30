@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import socket
+from django.conf import settings
+
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -133,12 +135,12 @@ LOGIN_REDIRECT_URL = "dashboard"
 
 
 HOSTNAME = socket.gethostname()
-
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 # if hostname same as production url name use STATIC_ROOT 
 if HOSTNAME == 'DESKTOP-E2DF7G9':
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/'),]
 else:
-        STATIC_ROOT = os.path.join(BASE_DIR, "static")
+        STATIC_ROOT = os.path.join(SITE_ROOT, "static/")
     
 # Path where media is stored
 MEDIA_URL = '/media/'
