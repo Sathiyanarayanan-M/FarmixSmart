@@ -126,7 +126,7 @@ LOGIN_REDIRECT_URL = "dashboard"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Path where media is stored
 MEDIA_URL = '/media/'
