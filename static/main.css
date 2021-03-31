@@ -1,7 +1,7 @@
 body {
   font-family: "Lato", sans-serif;
 }
-
+/* side bar */
 .sidebar {
   height: 100%;
   width: 0;
@@ -103,10 +103,13 @@ h1 {
   color: #00a86b;
   /* text-shadow:(0 2px 2px darken(150px,40%)); */
 }
+
+/* Yield_prediction */
 .form-group label {
   color: white;
 }
 
+/* Disease Detection */
 .disease-container {
   background-color: rgb(0, 0, 0); /* Fallback color */
   color: white;
@@ -133,31 +136,105 @@ h1 {
   padding: 20px;
   text-align: center;
 }
-/* .home-content{
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  min-height: 85vh;
-  max-width: 960px;
-  display: table;
-  position: relative;
-  padding: 0 3em;
+/* About Us */
+
+#our-team{
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
-.home-content h1{
-    margin: 0;
-    padding: 0 0 10px;
-    color: #fff;
-    font-size: 32px;
-  
+#our-team-sub-heading{
+  font-weight: normal;
+}
+.carousel-control-prev-icon {
+    background-image: url(https://image.flaticon.com/icons/svg/143/143289.svg);
+   
+}
+.carousel-control-next-icon {
+    background-image: url(https://image.flaticon.com/icons/svg/143/143290.svg);
+}
+.carousel-indicators{
+  position: relative !important;
+  margin-top: 40px;
+}
+.carousel-indicators li{
+  background-color: #ffff;
+  opacity: 1;
+}
+.carousel-indicators .active{
+  background-color: #54ECAA;
+}
+.our-team-designations{
+  font-size: 0.95rem;
+  margin:0;
+  padding-top: 10px;
+}
+.team-social-icons{
+  margin-top: 10px !important;
+  cursor: all-scroll;
+  size: 20px;
+}
+.team-social-icons i{
+ color: white;
 }
 
-.home-content p{
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  font-size: 17px;
-  text-align: justify;
-} */
+.team-social-middle-element{
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* .about{
+	cursor: pointer;
+	color: #00a86b;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+.about h1 {
+	padding: 10px 0;
+	margin-bottom: 20px;
+}
+.about h2 {
+	opacity: .8;
+}
+.about span {
+	display: block;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	margin:auto;
+	border-radius:50%;  
+	font-size: 40px;
+	color: #FFFFFF;
+	opacity: 0.7;
+	background-color: #8f94fb;
+	border: 2px solid #8f94fb;
+ 	transition:all .5s ease;
+
+}
+
+.about-item:hover span{
+	opacity: 1;	
+	border: 2px solid #00a86b;
+	font-size: 42px;
+	-webkit-transform: scale(1.1,1.1) rotate(360deg) ;
+	-moz-transform: scale(1.1,1.1) rotate(360deg) ;
+	-o-transform: scale(1.1,1.1) rotate(360deg) ;
+	transform: scale(1.1,1.1) rotate(360deg) ;
+}
+.about-item:hover h2{
+	opacity: 1;
+	-webkit-transform: scale(1.1,1.1)  ;
+	-moz-transform: scale(1.1,1.1)  ;
+	-o-transform: scale(1.1,1.1)  ;
+	transform: scale(1.1,1.1) ;
+}
+
+.about .lead{
+	color: #f1f1f1;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+
 @media screen and (max-height: 450) {
   .sidebar {
     padding-top: 15px;
@@ -178,7 +255,7 @@ h1 {
   div.content {
     margin-left: 0;
   }
-}
+} */
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
 @media screen and (max-width: 400px) {

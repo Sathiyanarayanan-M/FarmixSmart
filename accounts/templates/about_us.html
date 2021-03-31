@@ -1,0 +1,164 @@
+{% extends 'index.html' %} {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'main.css' %}" />
+<!-- 
+<section class="text-center about">
+  <h1>Our Team</h1>
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-lg-4 col-sm-6 col-ex-12 about-item wow lightSpeedIn"
+        data-wow-offset="200"
+      >
+        <span>GM</span>
+        <br>
+        <h2>Ganesha Moorthy</h2><br>
+        <h4>Digital Marketer</h4>
+        <br>
+        <p class="lead">Publish and manage the marketing stratagies</p>
+      </div>
+      <div
+        class="col-lg-4 col-sm-6 col-ex-12 about-item wow lightSpeedIn"
+        data-wow-offset="200"
+      >
+        <span>SN</span><br>
+        <h2>Sathiyanarayanan</h2><br>
+        <h4>Programmer / TL</h4>
+        <br>
+        <p class="lead">
+          Web developer mainly focusing on Django development and coded this
+          site.
+        </p>
+      </div>
+      <div class="clearfix visible-md-block visible-sm-block"></div>
+      <div
+        class="col-lg-4 col-sm-6 col-ex-12 about-item wow lightSpeedIn"
+        data-wow-offset="200"
+      >
+        <span>V</span><br>
+        <h2>Venkatesh</h2><br>
+        <h4>UI / UX Designer</h4><br>
+        <p class="lead">
+          Designing the Interface and various block of this page.
+        </p>
+      </div>
+    </div>
+  </div>
+</section> -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+<div id="about-us-main-div" class="w-100">
+  <!-- about us landing div starts -->
+  <!-- about us landing div ends -->
+  <!-- Our team starts-->
+  <div id="our-team">
+    <h4 class="text-center" style="color: #ffff;">Our Team</h4> <br>
+    <h4 id="our-team-sub-heading" class="text-center" style="color: #ffff;">Blend of Experience, Talent & Knowledge</h4> <br>
+    <!-- Our team carousel starts -->
+    <div id="our-team" class="col-10 offset-1">
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="col-10 offset-1 row justify-content-around">
+              <div class="col-2">
+                <img src="{% static 'images/user3.svg' %}" style="height:130px; width: 130px;" alt="team 1"><br>
+                <p class="our-team-designations text-white text-center bold-font">GaneshaMoorthy</p><p class="our-team-designations text-white text-center bold-font">Digital Marketer</p>
+                
+                <!-- social icons starts -->
+                <div class="team-social-icons row justify-content-center align-items-center">
+                  <a href='facebook.com'><i class="fab fa-linkedin fa-2x" ></i></a>
+                  <a href=""><i class="team-social-middle-element fab fa-github-square fa-2x"></i></a>
+                  <a href="mailto:ganeshgm254@gmail.com"><i class="fas fa-envelope-square fa-2x"></i></a>
+                </div>
+                <!-- social icons ends -->
+              </div>
+              <div class="col-2">
+                <img src="{% static 'images/user2.svg' %}" style="height:130px; width: 130px;" alt="team 2">
+                <p class="our-team-designations text-center text-white bold-font">Sathiyanarayanan</p><p class="our-team-designations text-white text-center bold-font">Programmer / TL</p>
+                <!-- social icons starts -->
+                <div class="team-social-icons row justify-content-center align-items-center">
+                    <a href='https://www.linkedin.com/in/sathiyanarayanan-m/'><i class="fab fa-linkedin fa-2x" ></i></a>
+                    <a href="https://github.com/Sathiyanarayanan-M"><i class="team-social-middle-element fab fa-github-square fa-2x"></i></a>
+                    <a href="mailto:sathiyastar2000@gmail.com"><i class="fas fa-envelope-square fa-2x"></i></a>
+                </div>
+                <!-- social icons ends -->
+              </div>
+              <div class="col-2">
+                <img src="{% static 'images/user1.svg' %}" style="height:130px; width: 130px;" alt="team 3">
+                <p class="our-team-designations text-white text-center bold-font">Venkatesh</p><p class="our-team-designations text-white text-center bold-font">UI / UX Designer</p>
+                <!-- social icons starts -->
+                <div class="team-social-icons row justify-content-center align-items-center">
+                    <a href=''><i class="fab fa-linkedin fa-2x" ></i></a>
+                    <a href=""><i class="team-social-middle-element fab fa-github-square fa-2x"></i></a>
+                    <a href="mailto:venkatkgs006@gmail.com"><i class="fas fa-envelope-square fa-2x"></i></a>
+                </div>
+                <!-- social icons ends -->
+              </div>
+
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="col-10 offset-1 row justify-content-around">
+              <div class="col-2">
+                <img src="https://image.flaticon.com/icons/svg/145/145842.svg" alt="team 4">
+                <p class="our-team-designations text-center bold-font">Operations</p>
+                <!-- social icons starts -->
+                <div class="team-social-icons row justify-content-center align-items-center">
+                  <i class="fab fa-linkedin"></i>
+                  <i class="team-social-middle-element fab fa-twitter-square"></i>
+                  <i class="fas fa-envelope-square"></i>
+                </div>
+                <!-- social icons ends -->
+              </div>
+              <div class="col-2">
+                <img src="https://image.flaticon.com/icons/svg/145/145845.svg" alt="team 5">
+                <p class="our-team-designations text-center bold-font">Product</p>
+                <!-- social icons starts -->
+                <div class="team-social-icons row justify-content-center align-items-center">
+                  <i class="fab fa-linkedin"></i>
+                  <i class="team-social-middle-element fab fa-twitter-square"></i>
+                  <i class="fas fa-envelope-square"></i>
+                </div>
+                <!-- social icons ends -->
+              </div>
+              <div class="col-2">
+                <img src="https://image.flaticon.com/icons/svg/145/145848.svg" alt="team 6">
+                <p class="our-team-designations text-center bold-font">Accounts</p>
+                <!-- social icons starts -->
+                <div class="team-social-icons row justify-content-center align-items-center">
+                  <i class="fab fa-linkedin"></i>
+                  <i class="team-social-middle-element fab fa-twitter-square"></i>
+                  <i class="fas fa-envelope-square"></i>
+                </div>
+                <!-- social icons ends -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- left right indicator starts -->
+        <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span> -->
+				</a>
+        <!-- left right indicator ends -->
+        <!-- bottom buttons for change section starts -->
+        <!-- <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        </ol> -->
+        <!-- bottom button for change section ends -->
+      </div>
+    </div>
+    <!-- Our team carousel ends -->
+  </div>
+  <!-- Our team ends-->
+  <!-- Our story ends -->
+</div>
+
+
+{% endblock %}

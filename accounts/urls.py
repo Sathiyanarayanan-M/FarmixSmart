@@ -10,4 +10,5 @@ urlpatterns = [
     path("dashboard/", views.DashboardView, name="dashboard"),
     path("diseaseDetection/", views.diseaseDetection, name="diseaseDetection"),
     path("yieldPrediction/", views.yieldPrediction, name="yieldPrediction"),
+    path("contact/", views.contact, name="contact"),
 ]

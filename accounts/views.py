@@ -24,6 +24,9 @@ yield_model_path = os.path.join(base_path, 'model', 'new_model.sav')
 def IndexView(request):
     return render(request, "home.html")
 
+def contact(request):
+    return render(request, "about_us.html")
+
 
 def multi_yield(yield_model,yield_list):
     items = [
