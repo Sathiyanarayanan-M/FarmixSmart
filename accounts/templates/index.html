@@ -14,13 +14,13 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="language" content="English">
   <meta name="author" content="Sathiyanarayanan">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" >
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <!-- css links -->
   <link rel="canonical" href="http://farmixsmart.studio/" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-  <link rel="stylesheet" href="{% static 'css_ani.css' %}" />
-  <link rel="stylesheet" href="{% static 'main.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/css_ani.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
   <!-- Javascript stuff -->
   <script src="https://kit.fontawesome.com/67d5ee91a4.js" crossorigin="anonymous"></script>
   <script>
@@ -37,48 +37,55 @@
   <link rel="icon" href="https://img.icons8.com/plasticine/100/000000/field.png" type="image/x-icon" />
 </head>
 
-<body class="area">
+<body>
   <!-- <div class="area"> -->
   <!-- side bar -->
-  <div class="circles">
-    <button class="openbtn" onclick="openNav()">☰</button>
-    <div class="sidebar" id="sidebar">
-      <!-- <header>MENU</header> -->
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <!-- <div class="circles"> -->
+  <button class="openbtn" onclick="openNav()">☰</button>
+  <div class="sidebar" id="sidebar">
+    <!-- <header>MENU</header> -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 
-      {% if user.is_authenticated %}
-
+    {% if user.is_authenticated %}
+    <div class='sidebar-element'>
       <a href="{% url 'dashboard' %}"><i class="fab fa-dashcube"></i>Dashboard</a>
-
+    </div>
+    <div class='sidebar-element'>
       <a href="{% url 'yieldPrediction' %}"><i class="fas fa-seedling"></i>Yield Prediction</a>
-
+    </div>
+    <div class='sidebar-element'>
       <a href="{% url 'diseaseDetection' %}"><i class="fas fa-stethoscope"></i>Disease Detection</a>
-
+    </div>
+    <div class='sidebar-element'>
       <a href="{% url 'feed' %}"><i class="fas fa-users"></i>Community</a>
-
+    </div>
+    <div class='sidebar-element'>
       <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>logout</a>
-
-      {% else %}
-
+    </div>
+    {% else %}
+    <div class='sidebar-element'>
       <a href="/"><i class="fas fa-home"></i>Home</a>
-
+    </div>
+    <div class='sidebar-element'>
       <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i>Login</a>
-
+    </div>
+    <div class='sidebar-element'>
       <a href="{% url 'registration' %}"><i class="fas fa-user-plus"></i>Register</a>
-
-      {% endif %}
-
+    </div>
+    {% endif %}
+    <div class='sidebar-element'>
       <a href="{% url 'contact'  %}"><i class="fas fa-address-book"></i>Contact</a>
     </div>
-    <h3></h3>
-    <h3></h3>
-    <h3></h3>
-    <h3></h3>
-    <h3></h3>
-    <h3></h3>
-
-    <div class="content" id="content">{% block content %} {% endblock %}</div>
   </div>
+  <!-- <h3></h3>
+    <h3></h3>
+    <h3></h3>
+    <h3></h3>
+    <h3></h3>
+    <h3></h3> -->
+
+  <div class="content" id="content">{% block content %} {% endblock %}</div>
+  <!-- </div> -->
   <!-- </div> -->
 </body>
 

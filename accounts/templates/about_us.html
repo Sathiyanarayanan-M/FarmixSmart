@@ -1,5 +1,5 @@
 {% extends 'index.html' %} {% block content %} {% load static %}
-<link rel="stylesheet" href="{% static 'main.css' %}" />
+<link rel="stylesheet" href="{% static 'css/main.css' %}" />
 <!-- 
 <section class="text-center about">
   <h1>Our Team</h1>
@@ -46,7 +46,7 @@
 </section> -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-<div id="about-us-main-div" class="w-100">
+<div id="about-us-main-div" >
   <!-- about us landing div starts -->
   <!-- about us landing div ends -->
   <!-- Our team starts-->
@@ -54,88 +54,90 @@
     <h4 class="text-center" style="color: #ffff;">Our Team</h4> <br>
     <h4 id="our-team-sub-heading" class="text-center" style="color: #ffff;">Blend of Experience, Talent & Knowledge</h4> <br>
     <!-- Our team carousel starts -->
-    <div id="our-team" class="col-10 offset-1">
 
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="col-10 offset-1 row justify-content-around">
-              <div class="col-2">
+      <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> -->
+        <!-- <div class="carousel-inner"> -->
+          <div class="carousel-item">
+            <!-- <div class="col-10 offset-1 row"> -->
+              <div class="col-2" id='members'>
                 <img src="{% static 'images/assets/user3.svg' %}" style="height:130px; width: 130px;" alt="team 1"><br>
                 <p class="our-team-designations text-white text-center bold-font">GaneshaMoorthy</p><p class="our-team-designations text-white text-center bold-font">Digital Marketer</p>
-                
+                <br>
                 <!-- social icons starts -->
                 <div class="team-social-icons row justify-content-center align-items-center">
-                  <a href='facebook.com'><i class="fab fa-linkedin fa-2x" ></i></a>
-                  <a href=""><i class="team-social-middle-element fab fa-github-square fa-2x"></i></a>
+                  <a href='https://www.linkedin.com/in/'><i class="fab fa-linkedin fa-2x" ></i></a>
+                  <a href="https://github.com/"><i class="team-social-middle-element fab fa-github-square fa-2x"></i></a>
                   <a href="mailto:ganeshgm254@gmail.com"><i class="fas fa-envelope-square fa-2x"></i></a>
                 </div>
                 <!-- social icons ends -->
               </div>
-              <div class="col-2">
+              <div class="col-2" id='members'> 
                 <img src="{% static 'images/assets/user2.svg' %}" style="height:130px; width: 130px;" alt="team 2">
                 <p class="our-team-designations text-center text-white bold-font">Sathiyanarayanan</p><p class="our-team-designations text-white text-center bold-font">Programmer / TL</p>
+                <br>
                 <!-- social icons starts -->
-                <div class="team-social-icons row justify-content-center align-items-center">
+                <div class="team-social-icons row justify-content-center  align-items-center">
                     <a href='https://www.linkedin.com/in/sathiyanarayanan-m/'><i class="fab fa-linkedin fa-2x" ></i></a>
                     <a href="https://github.com/Sathiyanarayanan-M"><i class="team-social-middle-element fab fa-github-square fa-2x"></i></a>
                     <a href="mailto:sathiyastar2000@gmail.com"><i class="fas fa-envelope-square fa-2x"></i></a>
                 </div>
                 <!-- social icons ends -->
               </div>
-              <div class="col-2">
+              <div class="col-2" id='members'>
                 <img src="{% static 'images/assets/user1.svg' %}" style="height:130px; width: 130px;" alt="team 3">
-                <p class="our-team-designations text-white text-center bold-font">Venkatesh</p><p class="our-team-designations text-white text-center bold-font">UI / UX Designer</p>
+                <p class="our-team-designations text-white text-center bold-font">Venkatesh</p>
+                <p class="our-team-designations text-white text-center bold-font">UI / UX Designer</p>
+                <br>
                 <!-- social icons starts -->
                 <div class="team-social-icons row justify-content-center align-items-center">
-                    <a href=''><i class="fab fa-linkedin fa-2x" ></i></a>
-                    <a href=""><i class="team-social-middle-element fab fa-github-square fa-2x"></i></a>
+                    <a href="https://www.linkedin.com/in/k-venkatesh-5b6703200"><i class="fab fa-linkedin fa-2x" ></i></a>
+                    <a href="https://github.com/venkatesh-006"><i class="team-social-middle-element fab fa-github-square fa-2x"></i></a>
                     <a href="mailto:venkatkgs006@gmail.com"><i class="fas fa-envelope-square fa-2x"></i></a>
                 </div>
                 <!-- social icons ends -->
               </div>
 
-            </div>
+            <!-- </div> -->
           </div>
-          <div class="carousel-item">
+          <!-- <div class="carousel-item">
             <div class="col-10 offset-1 row justify-content-around">
               <div class="col-2">
                 <img src="https://image.flaticon.com/icons/svg/145/145842.svg" alt="team 4">
                 <p class="our-team-designations text-center bold-font">Operations</p>
-                <!-- social icons starts -->
+                social icons starts
                 <div class="team-social-icons row justify-content-center align-items-center">
                   <i class="fab fa-linkedin"></i>
                   <i class="team-social-middle-element fab fa-twitter-square"></i>
                   <i class="fas fa-envelope-square"></i>
                 </div>
-                <!-- social icons ends -->
+                social icons ends
               </div>
               <div class="col-2">
                 <img src="https://image.flaticon.com/icons/svg/145/145845.svg" alt="team 5">
                 <p class="our-team-designations text-center bold-font">Product</p>
-                <!-- social icons starts -->
+                social icons starts
                 <div class="team-social-icons row justify-content-center align-items-center">
                   <i class="fab fa-linkedin"></i>
                   <i class="team-social-middle-element fab fa-twitter-square"></i>
                   <i class="fas fa-envelope-square"></i>
                 </div>
-                <!-- social icons ends -->
+                social icons ends
               </div>
               <div class="col-2">
                 <img src="https://image.flaticon.com/icons/svg/145/145848.svg" alt="team 6">
                 <p class="our-team-designations text-center bold-font">Accounts</p>
-                <!-- social icons starts -->
+                social icons starts
                 <div class="team-social-icons row justify-content-center align-items-center">
                   <i class="fab fa-linkedin"></i>
                   <i class="team-social-middle-element fab fa-twitter-square"></i>
                   <i class="fas fa-envelope-square"></i>
                 </div>
-                <!-- social icons ends -->
+                social icons ends
               </div>
             </div>
-          </div>
+          </div> -->
 
-        </div>
+        <!-- </div> -->
         <!-- left right indicator starts -->
         <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -144,7 +146,7 @@
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
 					<span class="sr-only">Next</span> -->
-				</a>
+				<!-- </a> -->
         <!-- left right indicator ends -->
         <!-- bottom buttons for change section starts -->
         <!-- <ol class="carousel-indicators">
@@ -152,8 +154,7 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         </ol> -->
         <!-- bottom button for change section ends -->
-      </div>
-    </div>
+      <!-- </div> -->
     <!-- Our team carousel ends -->
   </div>
   <!-- Our team ends-->

@@ -1,12 +1,26 @@
-body {
+/* body {
   font-family: "Lato", sans-serif;
+} */
+ * {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: "Exo", sans-serif;
+  background-color: #05396b;
+  height: 100%;
+  
+}
+
 /* side bar */
 .sidebar {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   background-color: #05396b;
@@ -29,7 +43,9 @@ body {
   text-decoration: none;
   color: white;
 }
-
+.sidebar-element :hover{
+background-color: #0f4475;
+}
 .sidebar a i {
   margin-right: 16px;
 }
@@ -72,13 +88,14 @@ body {
 .openbtn {
   font-size: 20px;
   cursor: pointer;
-  background-color: #05396b;
+  background-color: hsl(209, 91%, 22%);
   color: white;
   padding: 10px 15px;
   border: none;
   margin-top: 15px;
   margin-left: 15px;
   position: fixed;
+  z-index: 2;
 }
 
 .openbtn:hover {
@@ -89,19 +106,13 @@ ul {
   list-style-type: none;
 }
 h1 {
-  /* font-size: 50px;
-  font-family: "Lucida Bright";
-  color: #00a86b;
-  font-weight: bold;
-  text-align: center; */
+
   text-align: center;
-  padding: 50px;
+  padding-top: 50px;
   font-size: 62px;
   font-family: "Pacifico";
-  /* height: 150px/2; */
-  /* line-height: 150px/2; */
+
   color: #00a86b;
-  /* text-shadow:(0 2px 2px darken(150px,40%)); */
 }
 
 /* Yield_prediction */
@@ -140,11 +151,31 @@ h1 {
 
 #our-team{
   margin-top: 40px;
-  margin-bottom: 40px;
+  height: 100%;
+  overflow: auto;
+  z-index: auto;
 }
 #our-team-sub-heading{
   font-weight: normal;
 }
+.carousel-item{
+ display:block;
+ width: 100%;
+ text-align: center;
+}
+#members{
+  display: inline-block;
+  margin: 0 auto;
+  padding: 10px;
+}
+/* #members img{
+position: absolute;
+top: 50%;
+left: 50%;
+transform:translate(-50%,-50%);
+} */
+
+/*
 .carousel-control-prev-icon {
     background-image: url(https://image.flaticon.com/icons/svg/143/143289.svg);
    
@@ -152,7 +183,7 @@ h1 {
 .carousel-control-next-icon {
     background-image: url(https://image.flaticon.com/icons/svg/143/143290.svg);
 }
-.carousel-indicators{
+ .carousel-indicators{
   position: relative !important;
   margin-top: 40px;
 }
@@ -162,105 +193,44 @@ h1 {
 }
 .carousel-indicators .active{
   background-color: #54ECAA;
-}
+} */
+
 .our-team-designations{
   font-size: 0.95rem;
   margin:0;
   padding-top: 10px;
 }
 .team-social-icons{
-  margin-top: 10px !important;
-  cursor: all-scroll;
+
   size: 20px;
+
 }
 .team-social-icons i{
  color: white;
 }
 
 .team-social-middle-element{
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-/* .about{
-	cursor: pointer;
-	color: #00a86b;
-	padding-top: 20px;
-	padding-bottom: 30px;
-}
-.about h1 {
-	padding: 10px 0;
-	margin-bottom: 20px;
-}
-.about h2 {
-	opacity: .8;
-}
-.about span {
-	display: block;
-	width: 100px;
-	height: 100px;
-	line-height: 100px;
-	margin:auto;
-	border-radius:50%;  
-	font-size: 40px;
-	color: #FFFFFF;
-	opacity: 0.7;
-	background-color: #8f94fb;
-	border: 2px solid #8f94fb;
- 	transition:all .5s ease;
-
-}
-
-.about-item:hover span{
-	opacity: 1;	
-	border: 2px solid #00a86b;
-	font-size: 42px;
-	-webkit-transform: scale(1.1,1.1) rotate(360deg) ;
-	-moz-transform: scale(1.1,1.1) rotate(360deg) ;
-	-o-transform: scale(1.1,1.1) rotate(360deg) ;
-	transform: scale(1.1,1.1) rotate(360deg) ;
-}
-.about-item:hover h2{
-	opacity: 1;
-	-webkit-transform: scale(1.1,1.1)  ;
-	-moz-transform: scale(1.1,1.1)  ;
-	-o-transform: scale(1.1,1.1)  ;
-	transform: scale(1.1,1.1) ;
-}
-
-.about .lead{
-	color: #f1f1f1;
-	font-size: 14px;
-	font-weight: bold;
-}
-
-
-@media screen and (max-height: 450) {
-  .sidebar {
-    padding-top: 15px;
-  }
-  .sidebar {
-    font-size: 16px;
-  }
-}
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar a {
-    float: left;
-  }
-  div.content {
-    margin-left: 0;
-  }
-} */
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
 @media screen and (max-width: 400px) {
   .sidebar a {
-    text-align: center;
     float: none;
   }
+  .openbtn{
+    position: absolute;
+  }
+
 }
+@media screen and (max-width: 700px){
+  #members{
+    display:table;
+    position: relative;
+  }
+  h1{
+    font-size: 50px;
+  }
+} 

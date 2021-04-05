@@ -5,8 +5,8 @@
   <button type="submit">login</button>
 </form> -->
 {% load static %}
-<link rel="stylesheet" href="{% static 'login.css' %}" />
-
+<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+<div class="parent-login">
 <div class="login-container">
   <p class="sign" >Sign in</p>
   <form class="form1" method="POST" action = '#'>
@@ -15,5 +15,5 @@
     <input class="pass" type="password"  placeholder="Password" name="password" required>
     <button class = 'submit'type="submit" >Sign In</button>
     <!-- <p class="forgot"><a href="#">Forgot Password?</p> -->
-  </div>
+  </div></div>
 {% endblock %}
