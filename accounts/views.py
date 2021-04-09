@@ -125,11 +125,11 @@ def diseaseDetection(request):
     form = ImageUploadForm(request.POST, request.FILES)
     head = "null"
     if request.method == "POST" and "file" in request.FILES:
-        json_data = open('.'+staticfiles_storage.url("diseases.json"))
+        json_data = open('.'+staticfiles_storage.url("json/diseases.json"))
         load_json = json.load(json_data)
         f = request.FILES["file"]
         # static("images/") + str(request.user.id) + "test.jpg"
-        img_path = '.'+ staticfiles_storage.url("images/"+str(request.user.id)+"test.jpg")
+        img_path ='.'+ staticfiles_storage.url("images/"+str(request.user.id)+"test.jpg")
         handle_uploaded_file(f, img_path)
         preds = model_predict(img_path, model)
         print(preds[0])

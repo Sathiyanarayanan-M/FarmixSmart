@@ -5,7 +5,12 @@
 } */
 .login-container {
   background-color: #05396b;
-  position: absolute;
+  position: flex;
+  /* left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%); */
+  align-items: center;
+  justify-content: center;
   width: 400px;
   height: 400px;
   margin: 7em auto;
@@ -106,7 +111,7 @@ form.form1 {
 
 /* 
 @media (max-width: 600px) {
-  .main {
-    border-radius: 0px;
+  .login-container{
+    position:absolute;
   }
 } */

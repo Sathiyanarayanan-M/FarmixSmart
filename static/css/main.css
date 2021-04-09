@@ -84,6 +84,9 @@ background-color: #0f4475;
 .sidebar .closebtn :hover {
   text-decoration: none;
 }
+.side-open{
+  display:block;
+}
 
 .openbtn {
   font-size: 20px;
@@ -94,8 +97,6 @@ background-color: #0f4475;
   border: none;
   margin-top: 15px;
   margin-left: 15px;
-  position: fixed;
-  z-index: 2;
 }
 
 .openbtn:hover {

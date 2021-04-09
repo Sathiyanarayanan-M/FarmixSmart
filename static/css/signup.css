@@ -1,6 +1,8 @@
 .signup-container {
   background-color: #05396b;
-  position: absolute;
+  position: flex;
+  align-items: center;
+  justify-content: center;
   width: 400px;
   height: 550px;
   margin: 1em auto;
@@ -146,9 +148,5 @@ form.form1 {
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* 
-@media (max-width: 600px) {
-  .main {
-    border-radius: 0px;
-  }
-} */
+
+
